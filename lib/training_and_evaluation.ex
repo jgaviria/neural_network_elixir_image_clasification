@@ -10,11 +10,10 @@ defmodule TrainingAndEvaluation do
 
   ## Examples
 
-      TrainingAndEvaluation.train_and_evaluate_model()
+      TrainingAndEvaluation.train_and_evaluate_model(epochs: 5)
   """
-  @spec train_and_evaluate_model() :: any()
-  def train_and_evaluate_model do
-
+  @spec train_and_evaluate_model(epochs: integer()) :: any()
+  def train_and_evaluate_model(epochs: epochs) do
     {images_tensor, labels_tensor} = TrainTensor.preprocess_data()
     {test_images_tensor, test_labels_tensor} = TestTensor.preprocess_data()
 
@@ -31,7 +30,7 @@ defmodule TrainingAndEvaluation do
     trained_model_state =
       model
       |> trainer(:categorical_cross_entropy, :adam)
-      |> run(train_data, %{}, compiler: EXLA, epochs: 5)
+      |> run(train_data, %{}, compiler: EXLA, epochs: epochs)
 
     model
     |> evaluator()

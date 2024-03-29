@@ -9,9 +9,9 @@ defmodule Main do
   ## Returns
   :ok if successful.
   """
-  @spec start() :: :ok
-  def start do
-    TrainingAndEvaluation.train_and_evaluate_model()
+  @spec start(epochs :: integer()) :: :ok
+  def start(epochs: epochs) do
+    TrainingAndEvaluation.train_and_evaluate_model(epochs: epochs)
     :ok
   end
 end
