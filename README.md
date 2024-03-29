@@ -1,4 +1,6 @@
 # NeuralNetworkElixir
+## Description
+Attempting to create a neural network using Elixir, alongside the Axon and Nx libraries. The objective is to develop a deep learning model capable of recognizing handwritten numbers ranging from 0 to 9. To achieve this, we will acquire a curated image dataset consisting of 60,000 images from Scidata, each associated with its respective label, to serve as training data. Subsequently, we will utilize a separate set of 10 thousand images for testing the trained model's performance.
 
 ## Usage
 To start the application and trigger the training and evaluation of the model, follow these steps:
