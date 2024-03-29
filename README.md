@@ -37,3 +37,67 @@ The application consists of several modules:
 - **TestTensor:** Module for preprocessing test data.
 
 - **NeuralNetworkModel:** Module for building the neural network model architecture.
+
+## The Training Set
+
+The first tuple contains information about the test images. It consists of three elements:
+
+- The binary data representing the images.
+- The type of data, which is :u indicating unsigned integers with a size of 8 bits.
+- The shape {60000, 1, 28, 28} , 60_000 thousand images, 1 channel (gray scale) and each image is 28 by 28 pixels.
+
+The second tuple contains information about the corresponding labels for the test images. It also consists of three elements:
+- The binary data representing the labels.
+- The type of data, which is :u indicating unsigned integers with a size of 8 bits.
+- There is no shape provided for the labels, but there are 60,000 labels corresponding to the 10,000 test images.
+
+```elixir
+{images, labels} = Scidata.MNIST.download()
+```
+
+```elixir
+{{<<0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...>>,
+{:u, 8}, {60000, 1, 28, 28}}
+{<<5, 0, 4, 1, 9, 2, 1, 3, 1, 4, 3, 5, 3, 6, 1, 7, 2, 8, 6, 9, 4, 0, 9, 1, 1,
+2, 4, 3, 2, 7, 3, 8, 6, 9, 0, 5, 6, 0, 7, 6, 1, 8, 7, 9, 3, 9, 8, ...>>,
+```
+
+## The Test Set
+
+The first tuple contains information about the test images. It consists of three elements:
+
+- The binary data representing the images.
+- The type of data, which is :u indicating unsigned integers with a size of 8 bits.
+- The shape of the data, which is {10000, 1, 28, 28} indicating there are 10,000 images, each with dimensions of 28x28 pixels.
+- 
+The second tuple contains information about the corresponding labels for the test images. It also consists of three elements:
+- The binary data representing the labels.
+- The type of data, which is :u indicating unsigned integers with a size of 8 bits.
+- There is no shape provided for the labels, but there are 10,000 labels corresponding to the 10,000 test images.
+
+```elixir
+{test_images, test_labels} = Scidata.MNIST.download_test()
+```
+
+```elixir
+{{<<0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...>>,
+{:u, 8}, {10000, 1, 28, 28}},
+{<<7, 2, 1, 0, 4, 1, 4, 9, 5, 9, 0, 6, 9, 0, 1, 5, 9, 7, 3, 4, 9, 6, 6, 5, 4,
+0, 7, 4, 0, 1, 3, 1, 3, 4, 7, 2, 7, 1, 2, 1, 1, 7, 4, 2, 3, 5, 1, ...>>,
+```
+
+To see what you are working with, you can run the following to get a heatmap representing an image:
+
+```elixir
+{images, labels} = Scidata.MNIST.download()
+{images_data, images_type, images_shape} = images
+ 
+images_data
+|> Nx.from_binary(images_type)
+|> Nx.reshape(images_shape)
+|> then(& &1[[0]])
+|> Nx.to_heatmap()
+```
+
