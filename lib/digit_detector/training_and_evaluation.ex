@@ -1,8 +1,8 @@
-defmodule TrainingAndEvaluation do
+defmodule DigitDetector.TrainingAndEvaluation do
   @moduledoc """
   Module for training and evaluating machine learning models.
   """
-
+  alias DigitDetector.{NeuralNetworkModel, TrainTensor, TestTensor}
   import Axon.Loop
 
   @doc """

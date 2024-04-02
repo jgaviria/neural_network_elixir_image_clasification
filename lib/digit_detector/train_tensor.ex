@@ -1,4 +1,4 @@
-defmodule TrainTensor do
+defmodule DigitDetector.TrainTensor do
   @moduledoc """
   Module for preprocessing training data.
   """

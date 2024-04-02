@@ -1,4 +1,4 @@
-defmodule TestTensor do
+defmodule DigitDetector.TestTensor do
   @moduledoc """
   Module for preprocessing test tensors.
   """

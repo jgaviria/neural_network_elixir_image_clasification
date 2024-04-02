@@ -1,4 +1,4 @@
-defmodule NeuralNetworkModel do
+defmodule DigitDetector.NeuralNetworkModel do
   @moduledoc """
   Module for building the neural network model.
   """

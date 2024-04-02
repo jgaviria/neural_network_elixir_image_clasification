@@ -24,7 +24,8 @@ defmodule NeuralNetworkElixir1.MixProject do
       {:axon, "~> 0.6"},
       {:exla, "~> 0.6"},
       {:nx, "~> 0.7.1"},
-      {:scidata, "~> 0.1.3"}
+      {:scidata, "~> 0.1.3"},
+      {:image, "~> 0.37"}
     ]
   end
 end

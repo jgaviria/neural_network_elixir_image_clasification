@@ -36,6 +36,14 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/axon" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/table" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/nimble_pool" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ex_image_info" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/sweet_xml" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cc_precompiler" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/image" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_html" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/vix" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mogrify" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/pixels" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -66,5 +74,13 @@
     <orderEntry type="library" name="nimble_pool" level="project" />
     <orderEntry type="library" name="excoveralls" level="project" />
     <orderEntry type="library" name="kino" level="project" />
+    <orderEntry type="library" name="ex_image_info" level="project" />
+    <orderEntry type="library" name="inch_ex" level="project" />
+    <orderEntry type="library" name="credo" level="project" />
+    <orderEntry type="library" name="image" level="project" />
+    <orderEntry type="library" name="mogrify" level="project" />
+    <orderEntry type="library" name="pixels" level="project" />
+    <orderEntry type="library" name="kino" level="project" />
+    <orderEntry type="library" name="image" level="project" />
   </component>
 </module>
