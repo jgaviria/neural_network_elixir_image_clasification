@@ -17,12 +17,12 @@ mix deps.get
 
 ```elixir
 iex -S mix
-Main.start(epochs: 5)
+Main.start_digit_detector(epochs: 5)
 ```
 or 
 
 ```elixir
-mix run -e "Main.start(epochs: 5)"
+mix run -e "Main.start_digit_detector(epochs: 5)"
 ```
 
 This will initiate the training and evaluation process of the neural network model using the MNIST dataset.
