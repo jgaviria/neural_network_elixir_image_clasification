@@ -1,6 +1,8 @@
 # NeuralNetworkElixir
 ## Description
-Attempting to create a neural network using Elixir, alongside the Axon and Nx libraries. The objective is to develop a deep learning model capable of recognizing handwritten numbers ranging from 0 to 9. To achieve this, we will acquire a curated image dataset consisting of 60,000 images from Scidata, each associated with its respective label, to serve as training data. Subsequently, we will utilize a separate set of 10 thousand images for testing the trained model's performance.
+There are 2 neural networks implemented 100% percent in Elixir, Axon and Nx. The first one implements a deep learning model capable of recognizing handwritten numbers ranging from 0 to 9. To achieve this, we will acquire a curated image dataset consisting of 60,000 images from Scidata, each associated with its respective label, to serve as training data. Subsequently, we will utilize a separate set of 10 thousand images for testing the trained model's performance.
+
+The Second one, will train a model for recognizing pneumonia from an x-ray image. We will consider only two possible target labels,  label "1" images showing pneumonia while labbel "0" labels images without pneumonia. The data set was obtained from Keggle and it consists of 5216 images for training and 624 for testing.
 
 ## Usage
 To start the application and trigger the training and evaluation of the model, follow these steps:
@@ -17,17 +19,23 @@ mix deps.get
 
 ```elixir
 iex -S mix
+# Runs the digit detector 
 Main.start_digit_detector(epochs: 5)
+
+# Runs the x-ray classifier
+Main.start_xray_detector(epochs: 5)
 ```
 or 
 
 ```elixir
 mix run -e "Main.start_digit_detector(epochs: 5)"
+
+mix run -e "Main.start_xray_detector(epochs: 5)"
 ```
 
 This will initiate the training and evaluation process of the neural network model using the MNIST dataset.
 
-## Application Overview
+## Digit Detector Overview
 The application consists of several modules:
 
 - **Main:** The main module responsible for starting the application and triggering the training and evaluation process.
@@ -103,3 +111,5 @@ images_data
 |> Nx.to_heatmap()
 ```
 
+## X-ray Detector Overview
+todo
